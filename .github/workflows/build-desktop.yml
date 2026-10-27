@@ -21,6 +21,8 @@ jobs:
         run: npm install
       - name: Build Windows
         run: npm run dist:win
+         env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }} 
       - name: Upload Windows
         uses: actions/upload-artifact@v4
         with:
@@ -38,6 +40,8 @@ jobs:
         run: npm install
       - name: Build Linux
         run: npm run dist:linux
+        env:
+        GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       - name: Upload Linux
         uses: actions/upload-artifact@v4
         with:
